@@ -620,12 +620,23 @@ class Pelicula{
         this.pais=pais;
         this.generos=generos;
         this.clasificacion=clasificacion;
+        
 
         this.validarIMDB(id);
         this.validarTitulo(titulo);
         this.validarDirector(director);
         this.validarEstreno(estreno);
         this.validarPais(pais);
+    }
+    // ATRIBUTO ESTATICO DE TIPO GET QUE RETORNE LA LISTA DE GENEROS PERMITIDOS
+    static get listaGeneros(){
+        return ["Action", "Adult", "Adventure","Animation", "Biography", "Comedy", "Crime", "Documentary" ,"Drama",
+                "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", 
+                "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+    }
+
+    static generosAceptados(){
+        return console.info(`LOS GENEROS ACEPTADOS SON: ${Pelicula.listaGeneros.join(", ")}`);
     }
 
     validarCadena(propiedad,  valor){
@@ -649,8 +660,8 @@ class Pelicula{
 
         // validar que los paises se ingresen como arreglos
         validarArreglo(propiedad, valor){
-        if(!valor)return console.error("NO EXITES EL ARREGLO ESTA VACIO");
-        if(!(valor instanceof Array))return console.erro(`${propiedad} ${valor} NO ES DE TIPO ARREGLO`);
+        if(valor===null)return console.error("NO EXITES EL ARREGLO ESTA VACIO");
+        if(!(valor instanceof Array))return console.error(`${propiedad} ${valor} NO ES DE TIPO ARREGLO`);
         for (let cadena of valor) {
             if(typeof cadena !== "string")return console.error(`EL VALOR ${cadena} NO ES DE TIPO STRING`);
         }
@@ -699,6 +710,9 @@ class Pelicula{
     validarPais(pais){
         this.validarArreglo("Pais: ", pais);
     }
+    validarGenero(){
+        
+    }
 
     
 
@@ -708,7 +722,8 @@ const peli= new Pelicula({
     id:"tt1234567",
     titulo:"Peli oscar",
     director:"oscar R",
-    estreno:1996
+    estreno:1996,
+    pais:["colombia", "mexico"]
 });
     
 </script>
