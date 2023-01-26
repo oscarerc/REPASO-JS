@@ -612,14 +612,14 @@ const devolverParImpar =(arr= undefined)=>{
 // Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
 
 class Pelicula{
-    constructor({id,titulo,director,estreno,pais,generos,clasificacion}){
+    constructor({id,titulo,director,estreno,pais,generos,calificacion}){
         this.id=id;
         this.titulo=titulo;
         this.director=director;
         this.estreno=estreno;
         this.pais=pais;
         this.generos=generos;
-        this.clasificacion=clasificacion;
+        this.calificacion=calificacion;
         
 
         this.validarIMDB(id);
@@ -628,6 +628,7 @@ class Pelicula{
         this.validarEstreno(estreno);
         this.validarPais(pais);
         this.validarGeneros(generos);
+        this.validarCalificacion(calificacion);
     }
 
 
@@ -719,29 +720,76 @@ class Pelicula{
         if(this.validarArreglo("Generos", generos)){
             for (let genero of generos) {
                 // LOS METODOS ESTATICOS NO NECESITAN DEL THIS
-                console.log(genero, Pelicula.listaGeneros.includes(genero));
                 if(!Pelicula.listaGeneros.includes(genero)){
                     console.error(`GENERO INCORRECTO ${generos.join(",")}`);
-                    Pelicula.generosAceptados();
-
-
+                    // Pelicula.generosAceptados();
                 }
             }
         }
-    }  
+    }
+    
+    validarCalificacion(calificacion){
+        if(this.validarNumero("Calificacion", calificacion))
+        return (calificacion < 0 || calificacion > 10)
+        ? console.error("LA CALIFICACION DEBE SER DE 0 A 10")
+        :this.calificacion= calificacion.toFixed(1);
+
+    }
+
+    fichaTecnica(){
+        console.info(`Ficha tecnica : \nTitulo: ${this.titulo} \nDirector: ${this.director}\nAño: ${this.estreno}\nPais:${this.pais.join("-")} \nGeneros: ${this.generos.join(",")} \nCalificacion: ${this.calificacion} \nIMDB id: ${this.id}`);
+    }
 
 }
 
+// PARA UNA SOLA PELICULA
+// const peli= new Pelicula({
+//     id:"tt1234567",
+//     titulo:"Peli oscar",
+//     director:"oscar R",
+//     estreno:1996,
+//     pais:["colombia", "mexico"],
+//     generos:["Sport", "Comedy"],
+//     calificacion:2.333
+// });
 
-Pelicula.generosAceptados();
-const peli= new Pelicula({
-    id:"tt1234567",
-    titulo:"Peli oscar",
-    director:"oscar R",
-    estreno:1996,
-    pais:["colombia", "mexico"],
-    generos:["Sport", "Comedy"]
-});
+// // AQUI YA SE UTILIZAN LOS METODOS QUE SE UTILIZAN EN EL OBJETO
+// peli.fichaTecnica();
+
+// PARA VARIAS PELICULAS
+
+    const misPelis=[
+    {
+
+     id:"tt1234567",
+     titulo:"Peli oscar",
+     director:"oscar R",
+     estreno:1996,
+     pais:["colombia", "mexico"],
+     generos:["Sport", "Comedy"],
+     calificacion:2.333
+
+    },
+    {
+     id:"tt1244567",
+     titulo:"Peli juan",
+     director:"oscar R",
+     estreno:1999,
+     pais:["colombia", "mexico"],
+     generos:["Sport", "Comedy"],
+     calificacion:4.333
+    },
+    {     
+     id:"tt1233457",
+     titulo:"Peli felipe",
+     director:"oscar R",
+     estreno:1998,
+     pais:["colombia", "mexico"],
+     generos:["Sport", "Comedy"],
+     calificacion:9.333}
+    ];
+
+   misPelis.forEach(el=> new Pelicula(el).fichaTecnica());
     
 </script>
 </body>
