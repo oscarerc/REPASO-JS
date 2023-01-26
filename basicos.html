@@ -627,17 +627,9 @@ class Pelicula{
         this.validarDirector(director);
         this.validarEstreno(estreno);
         this.validarPais(pais);
-    }
-    // ATRIBUTO ESTATICO DE TIPO GET QUE RETORNE LA LISTA DE GENEROS PERMITIDOS
-    static get listaGeneros(){
-        return ["Action", "Adult", "Adventure","Animation", "Biography", "Comedy", "Crime", "Documentary" ,"Drama",
-                "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", 
-                "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+        this.validarGeneros(generos);
     }
 
-    static generosAceptados(){
-        return console.info(`LOS GENEROS ACEPTADOS SON: ${Pelicula.listaGeneros.join(", ")}`);
-    }
 
     validarCadena(propiedad,  valor){
         // propieda = tipo de dato - valor = id
@@ -660,11 +652,12 @@ class Pelicula{
 
         // validar que los paises se ingresen como arreglos
         validarArreglo(propiedad, valor){
-        if(valor===null)return console.error("NO EXITES EL ARREGLO ESTA VACIO");
+        if(!valor)return console.error("NO EXITES EL ARREGLO ESTA VACIO");
         if(!(valor instanceof Array))return console.error(`${propiedad} ${valor} NO ES DE TIPO ARREGLO`);
         for (let cadena of valor) {
             if(typeof cadena !== "string")return console.error(`EL VALOR ${cadena} NO ES DE TIPO STRING`);
         }
+
         return true;
     }
 
@@ -710,20 +703,44 @@ class Pelicula{
     validarPais(pais){
         this.validarArreglo("Pais: ", pais);
     }
-    validarGenero(){
-        
+
+        // ATRIBUTO ESTATICO DE TIPO GET QUE RETORNE LA LISTA DE GENEROS PERMITIDOS
+        static get listaGeneros(){
+        return ["Action", "Adult", "Adventure","Animation", "Biography", "Comedy", "Crime", "Documentary" ,"Drama",
+                "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", 
+                "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
     }
 
-    
+    static generosAceptados(){
+        return console.info(`LOS GENEROS ACEPTADOS SON: ${Pelicula.listaGeneros.join(", ")}`);
+    }
+
+    validarGeneros(generos){
+        if(this.validarArreglo("Generos", generos)){
+            for (let genero of generos) {
+                // LOS METODOS ESTATICOS NO NECESITAN DEL THIS
+                console.log(genero, Pelicula.listaGeneros.includes(genero));
+                if(!Pelicula.listaGeneros.includes(genero)){
+                    console.error(`GENERO INCORRECTO ${generos.join(",")}`);
+                    Pelicula.generosAceptados();
+
+
+                }
+            }
+        }
+    }  
 
 }
 
+
+Pelicula.generosAceptados();
 const peli= new Pelicula({
     id:"tt1234567",
     titulo:"Peli oscar",
     director:"oscar R",
     estreno:1996,
-    pais:["colombia", "mexico"]
+    pais:["colombia", "mexico"],
+    generos:["Sport", "Comedy"]
 });
     
 </script>
