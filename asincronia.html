@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JS</title>
+</head>
+<body>
+    <h1>Asincronia ENN js</h1>
+
+<script>
+// recibe una callback con un tiempo para ejecutar la accion
+    setTimeout(()=>{
+        console.log("EJECUTADO");
+        new Date().toLocateTimeString();
+    },1000)
+
+    // CANCELAR UN TIMEOUT PERO DEBE ESTAR GUARDADO EN UN VARIABLE
+    // clearTimeout();
+
+    // setInterval(() => {
+    //     // se ejecuta cada cierto tiempo
+    // }, interval);
+    // dar la hora en un formato humanamente entendible
+    // new Date().toLocateTimeString();
+
+</script>
+
+</body>
+</html>
