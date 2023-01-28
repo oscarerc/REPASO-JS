@@ -11,10 +11,10 @@
 
 <script>
 // recibe una callback con un tiempo para ejecutar la accion
-    setTimeout(()=>{
-        console.log("EJECUTADO");
-        new Date().toLocateTimeString();
-    },1000)
+    // setTimeout(()=>{
+    //     console.log("EJECUTADO");
+    //     new Date().toLocateTimeString();
+    // },1000)
 
     // CANCELAR UN TIMEOUT PERO DEBE ESTAR GUARDADO EN UN VARIABLE
     // clearTimeout();
@@ -24,6 +24,59 @@
     // }, interval);
     // dar la hora en un formato humanamente entendible
     // new Date().toLocateTimeString();
+
+
+    //--------------------------------------------------
+        // ASINCRONIA
+        // JS= SINGLE THREAD Y MULTI THREAD
+        // OPERACIONES DE CPU Y OPERACIONES DE I/o (ENTRADAS)
+        //OPERACIONES CONCURRENTES = CUANDO DOS O O MAS TARDES PROGRESAN SIMULTANEAMENTE-PUEDENE INICIAR DE DISTINTA FORMA //O PARALELAS=ARRANCAN A LA VEZ
+        //operaciones sincronas y asincronas=cuando tendra lugar la respuesta
+        // SINCRONA: LA RESPUESTA TENDRA LUGAR EN TIEMPO INMEDIATO-BLOQUENATE
+        // ASINCRONA: LA RESPUESTA SUCEDE EN UN FUTURO NO SE ESPECIFICA CUANDO VA A LLEGAR LA RESPUESTA SUELTA EL CONTROL-NO BLOQUEANTE
+
+        // EJEMPLOS
+        //CODIGO SINCRONO BLOQUEANTE
+        (()=>{
+            console.log("CODIGO SINCRONO");
+            console.log("INICIO");
+
+            function dos(){
+                console.log("DOS");
+            }
+
+
+            function uno(){
+                console.log("UNO");
+                dos();
+                console.log("TRES");
+            }
+            uno();
+            console.log("FIN");
+        })();
+
+        //CODIGO ASINCRONO BLOQUEANTE
+        (()=>{
+            console.log("CODIGO asincrono");
+            console.log("INICIO");
+
+            function dos(){
+                setTimeout(function(){
+                    console.log("DOS");
+                },5000);
+            }
+
+
+            function uno(){
+                setTimeout(function(){
+                    console.log("UNO");
+                },0)
+                dos();
+                console.log("TRES");
+            }
+            uno();
+            console.log("FIN");
+        })();
 
 </script>
 
