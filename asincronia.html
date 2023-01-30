@@ -119,48 +119,82 @@
 // MANEJAR ASINCRONIA THE. = SE EJECUTA DESPUES DE DAR RESULTADO A LA FUNCION
 // CATCH =CAPTURA EL ERROR RESULTANTE
 
-     function cuadradoPromise(value) {
-      if (typeof value !== "number") {
-        return Promise.reject(`Error, el valor " ${value} " ingresado no es un número`);
-      }
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve({
-            value,
-            result: value * value
-          });
-        }, 0 | Math.random() * 1000);
-      });
-    }
+    //  function cuadradoPromise(value) {
+    //   if (typeof value !== "number") {
+    //     return Promise.reject(`Error, el valor " ${value} " ingresado no es un número`);
+    //   }
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve({
+    //         value,
+    //         result: value * value
+    //       });
+    //     }, 0 | Math.random() * 1000);
+    //   });
+    // }
 
-    cuadradoPromise(0)
-          .then(obj => {
-            //console.log(obj);
-            console.log('Inicio Promise');
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            return cuadradoPromise(1);
-          })
-          .then(obj => {
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            return cuadradoPromise(2);
-          })
-          .then(obj => {
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            return cuadradoPromise(3);
-          })
-          .then(obj => {
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            return cuadradoPromise("4");
-          })
-          .then(obj => {
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            return cuadradoPromise(5);
-          })
-          .then(obj => {
-            console.log(`Promise: ${obj.value}, ${obj.result}`);
-            console.log('Fin Promise');
-          })
-          .catch(err => console.error(err)); */
+    // cuadradoPromise(0)
+    //       .then(obj => {
+    //         //console.log(obj);
+    //         console.log('Inicio Promise');
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         return cuadradoPromise(1);
+    //       })
+    //       .then(obj => {
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         return cuadradoPromise(2);
+    //       })
+    //       .then(obj => {
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         return cuadradoPromise(3);
+    //       })
+    //       .then(obj => {
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         return cuadradoPromise("4");
+    //       })
+    //       .then(obj => {
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         return cuadradoPromise(5);
+    //       })
+    //       .then(obj => {
+    //         console.log(`Promise: ${obj.value}, ${obj.result}`);
+    //         console.log('Fin Promise');
+    //       })
+    //       .catch(err => console.error(err));  
+
+    //ASYNC AWAIT
+    // ASYNC= FUNCION QUE PUEDE HACER COSAS ASINCRONAS ESPERANDO INSTRUCCIONES HACIENDO USO DEL AWAIT
+
+
+
+      function cuadradoPromise(value) {
+       if (typeof value !== "number") {
+         return Promise.reject(`Error, el valor " ${value} " ingresado no es un número`);
+       }
+       return new Promise((resolve, reject) => {
+         setTimeout(() => {
+           resolve({
+             value,
+             result: value * value
+           });
+         }, 0 | Math.random() * 1000);
+       });
+     }
+
+    async function funionAsincronaDeclarada(){
+      try {
+          console.log("INICIO DE LA FUNCION ASINCRONA");
+        // EL AWAIT OBLIGA A QUE PRIMERO SE EJECUTE LA LINEA ANTES DE PASAR A LAA SIGUIENTE
+          let obj = await cuadradoPromise(0);
+          console.log(`Async function ${obj.value},${obj.result}`)
+
+          obj =await cuadradoPromise(1);
+          console.log(`Async function ${obj.value},${obj.result}`)
+
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
 
 </script>
