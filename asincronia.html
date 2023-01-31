@@ -180,7 +180,7 @@
          }, 0 | Math.random() * 1000);
        });
      }
-
+    //  DE FORMA DECLARADA
     async function funionAsincronaDeclarada(){
       try {
           console.log("INICIO DE LA FUNCION ASINCRONA");
@@ -195,6 +195,30 @@
         console.log(error);
       }
     }
+
+    // funionAsincronaDeclarada();
+
+    // DE FORMA EXPRESADA
+    const funcionAsincronaExpresada = async () => {
+      try {
+        console.log('Inicio Async Function');
+        let obj = await cuadradoPromise(6);
+        console.log(`Async Function: ${obj.value}, ${obj.result}`);
+        obj = await cuadradoPromise(7);
+        console.log(`Async Function: ${obj.value}, ${obj.result}`);
+        obj = await cuadradoPromise(8);
+        console.log(`Async Function: ${obj.value}, ${obj.result}`);
+        obj = await cuadradoPromise("9");
+        console.log(`Async Function: ${obj.value}, ${obj.result}`);
+        obj = await cuadradoPromise(10);
+        console.log(`Async Function: ${obj.value}, ${obj.result}`);
+        console.log('Fin Async Function');
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    // funcionAsincronaExpresada();
 
 
 </script>

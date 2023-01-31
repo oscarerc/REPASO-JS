@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+</head>
+<body>
+    <h1>NUEVOS TIPOS DE DATOS JS</h1>
+
+
+    <script>
+        // Symbol= DATO PRIMITIVO VALOR PRIVADO Y PARA USOS INTERNOS, CREA IBJETOS UNICOS
+
+        let id=Symbol("id");
+        let id2=Symbol("id2");
+
+        console.log(id === id2);
+        console.log(id,id2);
+        console.log(typeof id, typeofid2);
+
+        // INGRESAR UN SYMBOL A UN OBJETO RODO SE MANEJA CON []
+        const NOMBRE=Symbol();
+        const SALUDAR=Symbol();
+
+        const persona={
+            // DECLARACION DE LOS SYMBOL
+            [NOMBRE]: "oscar"
+        }
+
+        // LLAMAR UN SYMBOL
+        console.log(persona[NOMBRE]);
+
+        // AGREGAR DATOS MEDIANTE UNA FUNCION CREADA EN UN SYMBOL
+        persona[SALUDAR]=function(){
+            console.log("hola");
+        }
+
+        // ejecutar funcion creada del symbol
+        persona[SALUDAR]();
+        console.log(persona);
+
+        // DE FORMA PUBLICA COMO UN FORM NO SE MOSTRARAN LOS SYMBOL
+        // SE DEBE HACER MEDIANTE UN METODO GETOWNPROPERTYSYMBOL(OBJETO);
+
+        // EJEMPLO
+        console.log(Object.getOwnPropertySymbols(persona));
+
+
+        // //SETS
+        // TIPO DE SATO MEJORADO DE JS QUE SOLO ACEPTA DATOS UNICOS hablando de valores primitivos
+
+        const set = new Set([1,2,3,3,4,5,true,false,false,{},{},"hola","HOLA"]);
+        console.log(set);
+        
+        const set2= new Set();
+        set2.add(1);
+        console.log(set2)
+        // SABER NUMERO DE ELEMENTOS
+    console.log(set2.size);
+
+    // RECORRERLO
+    for (const item of set) {
+        console.log(item);
+    }
+    // PARA CONOCER LA POSICION DE UN SET DEBEMOS CONVERTIRLO EN ARRAY
+    var arr = Array.from(set);
+
+    console.log(arr[0]);
+
+            //MAPS
+// OBJETOS QUE NOS SIRVEN PARA ALMACENAR CONJUNTOS DE VALORES DE MANERA DE OBJETOS CON CARACTERISITCAS ESPECIALES
+
+        
+            
+        
+        </script>
+</body>
+</html>
