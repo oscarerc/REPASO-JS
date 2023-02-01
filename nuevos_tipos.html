@@ -236,6 +236,37 @@
     for (let y of gen) {
       console.log(y);
     } */
+
+    // PROXIES
+    // PERMITE CREAR UN OBJETO BASADO EN UN OBJETO LITERAL
+
+    // OBJETO
+    const persona= {
+      nombre: "",
+      apellido:"",
+      edad:0
+    }
+
+    // MANEJADOR
+    const manejador={
+      set(obj,prop,valor){
+        // AQUI VAN LAS VALIDACIONES Y EL MANEJO DE LOS DATOS
+        // PARA PODER INGRESAR O SETETAR DATOS
+
+      // EJEMPLO VALIDAR QUE SOLO SE USEN PROPIEDADES DEL OBJETO ORIGINAL VALIDANDO CON INDEXOF
+      if(Object.keys(obj).indexOf(prop)===-1){
+        return console.error("LA PROPIEDAD NO PUEDE SER CREADA POR QUE NO EXISTE EN EL OBJETO ORIGINAL"+ prop);
+      }
+        obj[prop]=valor
+      }
+    }
+
+    // NUEVO OBJETO BASADO EN EL PRIMERO
+    const jon = new Proxy(persona, manejador);
+
+    // COMO INGRESAR O TRAER LOS DATOS
+    
+
         
         </script>
 </body>
