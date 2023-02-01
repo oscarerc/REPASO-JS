@@ -72,8 +72,165 @@
             //MAPS
 // OBJETOS QUE NOS SIRVEN PARA ALMACENAR CONJUNTOS DE VALORES DE MANERA DE OBJETOS CON CARACTERISITCAS ESPECIALES
 
-        
-            
+         /* const mapa = new Map();
+    mapa.set("nombre", "Jon");
+    mapa.set("apellido", "MirCha");
+    mapa.set("edad", 35);
+    console.log(mapa);
+    console.log(mapa.size);
+    console.log(mapa.has("correo"));
+    console.log(mapa.has("nombre"));
+    console.log(mapa.get("nombre"));
+    mapa.set("nombre", "Jonathan MirCha");
+    console.log(mapa.get("nombre"));
+    mapa.delete("apellido");
+    mapa.set(19, "diecinueve");
+    mapa.set(false, "falso");
+    mapa.set({}, {});
+    console.log(mapa);
+    for (let [key, value] of mapa) {
+      console.log(`Llave: ${key}, Valor:${value}`);
+    }
+    const mapa2 = new Map([
+      ["nombre", "kEnAi"],
+      ["edad", 7],
+      ["animal", "perro"],
+      [null, "nulo"]
+    ]);
+    console.log(mapa2);
+    const llavesMapa2 = [...mapa2.keys()];
+    const valoresMapa2 = [...mapa2.values()];
+    console.log(llavesMapa2);
+    console.log(valoresMapa2); */
+
+//  WEAKSETS Y WEAKMAPS MAPAS Y SETS DEBILES= no son iterables
+    // WeakSets & WeakMaps
+
+
+    /* //const ws = new WeakSet([1, 2, 3, 3, 4, 5, true, false, false, {}, {}, "hola", "HOla"]);
+    const ws = new WeakSet();
+    let valor1 = { "valor1": 1 };
+    let valor2 = { "valor2": 2 };
+    let valor3 = { "valor3": 3 };
+    ws.add(valor1);
+    ws.add(valor2);
+    console.log(ws);
+    console.log(ws.has(valor1));
+    console.log(ws.has(valor3));
+    ws.delete(valor2);
+    console.log(ws);
+    ws.add(valor2);
+    ws.add(valor3);
+    console.log(ws);
+    setInterval(() => console.log(ws), 1000);
+    setTimeout(() => {
+      valor1 = null;
+      valor2 = null;
+      valor3 = null;
+    }, 5000); */
+
+
+      // WEAKMAP
+    /* const wm = new WeakMap([
+      ["nombre", "kEnAi"],
+      ["edad", 7],
+      ["animal", "perro"],
+      [null, "nulo"]
+    ]); */
+
+    /* const wm = new WeakMap();
+    let llave1 = {};
+    let llave2 = {};
+    let llave3 = {};
+    wm.set(llave1, 1);
+    wm.set(llave2, 2);
+    console.log(wm);
+    console.log(wm.has(llave1));
+    console.log(wm.has(llave3));
+    console.log(wm.get(llave1));
+    console.log(wm.get(llave2));
+    console.log(wm.get(llave3));
+    wm.delete(llave2);
+    console.log(wm);
+    wm.set(llave2, 2)
+    wm.set(llave3, 3)
+    console.log(wm);
+    setInterval(() => console.log(wm), 1000);
+    setTimeout(() => {
+      llave1 = null;
+      llave2 = null;
+      llave3 = null;
+    }, 5000); */
+
+
+
+    /* **********     Curso JavaScript: 53. Iterables & Iterators - #jonmircha     ********** */
+    //ITERABLES & ITERATORS
+
+    
+    /* const iterable = [1, 2, 3, 4, 5];
+    //const iterable = "Hola Mundo";
+    //const iterable = new Set([1, 2, 3, 3, 4, 5]);
+    //const iterable = new Map([["nombre", "jon"], ["edad", 35]]);
+    //Accedemos al iterador del iterable
+    const iterador = iterable[Symbol.iterator]();
+    console.log(iterable);
+    console.log(iterador);
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    let next = iterador.next();
+    while (!next.done) {
+      console.log(next.value);
+      next = iterador.next();
+    } */
+
+
+
+
+
+    /* **********     Curso JavaScript: 54. Generators - #jonmircha     ********** */
+    /* function* iterable() {
+      yield "hola";
+      console.log("Hola consola");
+      yield "hola 2";
+      console.log("Seguimos con más instrucciones de nuestro código");
+      yield "hola 3";
+      yield "hola 4";
+    }
+    let iterador = iterable();
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    for (let y of iterador) {
+      console.log(y);
+    }
+    const arr = [...iterable()];
+    console.log(arr);
+    function cuadrado(valor) {
+      setTimeout(() => {
+        return console.log({ valor, resultado: valor * valor })
+      }, Math.random() * 1000);
+    }
+    function* generador() {
+      console.log("Inicia Generator");
+      yield cuadrado(0);
+      yield cuadrado(1);
+      yield cuadrado(2);
+      yield cuadrado(3);
+      yield cuadrado(4);
+      yield cuadrado(5);
+      console.log("Termina Generator");
+    }
+    let gen = generador();
+    for (let y of gen) {
+      console.log(y);
+    } */
         
         </script>
 </body>
