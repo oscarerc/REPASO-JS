@@ -18,7 +18,7 @@
 
         console.log(id === id2);
         console.log(id,id2);
-        console.log(typeof id, typeofid2);
+        console.log(typeof id, typeof id2);
 
         // INGRESAR UN SYMBOL A UN OBJETO RODO SE MANEJA CON []
         const NOMBRE=Symbol();
@@ -241,7 +241,7 @@
     // PERMITE CREAR UN OBJETO BASADO EN UN OBJETO LITERAL
 
     // OBJETO
-    const persona= {
+    const persona1= {
       nombre: "",
       apellido:"",
       edad:0
@@ -257,16 +257,55 @@
       if(Object.keys(obj).indexOf(prop)===-1){
         return console.error("LA PROPIEDAD NO PUEDE SER CREADA POR QUE NO EXISTE EN EL OBJETO ORIGINAL"+ prop);
       }
-        obj[prop]=valor
+        obj[prop]=valor;
       }
     }
 
     // NUEVO OBJETO BASADO EN EL PRIMERO
-    const jon = new Proxy(persona, manejador);
+    const jon = new Proxy(persona1, manejador);
 
     // COMO INGRESAR O TRAER LOS DATOS
+        /* const persona = {
+      nombre: "",
+      apellido: "",
+      edad: 0
+    }
+    const manejador = {
+      set(obj, prop, valor) {
+        if (Object.keys(obj).indexOf(prop) === -1) {
+          return console.error(`La propiedad "${prop}" no existe en el objeto persona.`);
+        }
+        if (
+          (prop === "nombre" || prop === "apellido") &&
+          !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(valor))
+        ) {
+          return console.error(`La propiedad "${prop}"" sólo acepta letras y espacios en blanco`);
+        }
+        obj[prop] = valor;
+      }
+    }
+    const jon = new Proxy(persona, manejador);
+    jon.nombre = "Jon";
+    jon.apellido = "MirCha";
+    jon.edad = 35;
+    jon.twitter = "@jonmircha";
+    console.log(jon);
+    console.log(persona); */
     
+    //-------------------------------------------------
+    // PROPIEDADES DINAMICAS EN LOS OBJETOS
+    
+        /*     let aleatorio = Math.round(Math.random() * 100 + 5);
+        const objUsuarios = {
+          propiedad: "Valor",
+          [`id_${aleatorio}`]: "Valor Aleatorio"
+        };
+        console.log(objUsuarios);
+        const usuarios = ["Jon", "Irma", "Miguel", "Kala", "kEnAi"];
+        usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+        console.log(objUsuarios); */
 
+      
         
         </script>
 </body>

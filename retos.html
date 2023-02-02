@@ -1,0 +1,28 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ </head>
+ <body>
+  
+  <script>
+    // RETOS 1
+    // FORMA DE HACERLO 1
+    
+  let wrapped = [];
+  gifts.forEach(function(value) {
+    let len = value.length + 2;    
+    let gift = "\n*"+value+"*\n";
+    let startEnd = "*".repeat(len);
+    let wrap = startEnd + gift + startEnd;    
+    wrapped.push(wrap);       
+  })
+  return wrapped;
+
+  </script>
+ </body>
+ </html>
