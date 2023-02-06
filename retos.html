@@ -13,24 +13,27 @@
     // RETOS 1 ENVOLTURA
     // FORMA DE HACERLO 1
 
-  let wrapped = [];
-  gifts.forEach(function(value) {
-    let len = value.length + 2;    
-    let gift = "\n*"+value+"*\n";
-    let startEnd = "*".repeat(len);
-    let wrap = startEnd + gift + startEnd;    
-    wrapped.push(wrap);       
-  })
-  return wrapped;
+  // let wrapped = [];
+  // gifts.forEach(function(value) {
+  //   let len = value.length + 2;    
+  //   let gift = "\n*"+value+"*\n";
+  //   let startEnd = "*".repeat(len);
+  //   let wrap = startEnd + gift + startEnd;    
+  //   wrapped.push(wrap);       
+  // })
+  // return wrapped
 
 
   // NADIE QUIERE HACER HORAS EXTRAS
 
-//Un millonario ha comprado una red social y no trae buenas noticias. Ha anunciado que cada vez que una jornada de trabajo se pierde por un día festivo, habrá que compensarlo con dos horas extra otro día de ese mismo año.
+//Un millonario ha comprado una red social y no trae buenas noticias. Ha anunciado que cada vez que una 
+// jornada de trabajo se pierde por un día festivo, habrá que compensarlo con dos horas extra otro día de ese mismo año.
 
-// Obviamente la gente que trabaja en la empresa no le ha hecho ni pizca de gracia y están preparando un programa que les diga el número de horas extras que harían en el año si se aplicara la nueva norma.
+// Obviamente la gente que trabaja en la empresa no le ha hecho ni pizca de gracia y están preparando 
+//un programa que les diga el número de horas extras que harían en el año si se aplicara la nueva norma.
 
-// Al ser trabajo de oficina, su horario laboral es de lunes a viernes. Así que sólo tienes que preocuparte de los días festivos que caen en esos días.
+// Al ser trabajo de oficina, su horario laboral es de lunes a viernes.
+//  Así que sólo tienes que preocuparte de los días festivos que caen en esos días.
 
 // Dado un año y un array con las fechas de los días festivos, devuelve el número de horas extra que se harían ese año:
 
@@ -48,14 +51,54 @@
 // Aunque el 31 de diciembre sea festivo, las horas extra se harán el mismo año y no el siguiente.
 // El método Date.getDay() te devuelve el día de la semana de una fecha. El 0 es domingo, el 1 es lunes, etc.
 
-// function countHours(year, holidays) {
-//   return holidays.map(holiday => {
-//     let date = new Date(`${year}/${holiday}`)
-//     return [1, 2, 3, 4, 5].includes(date.getDay())
-//   }).reduce((count, extraHour) => count + extraHour) * 2
-// }
 
-// module.exports = countHours
+//solucion
+// por cada dia perdido debe rememorarse dos horas extras en el mismo año
+// se hace uso del metodo include para verificar que exista en el array
+
+function countHours(year, holidays) {
+  const weekendDays = [0, 6];
+  let hours = 0;
+
+  holidays.forEach( function(holiday) {
+    let date = new Date(`${holiday}/${year}`);
+    if(!weekendDays.includes(date.getDay())) {
+      hours += 2;
+    }
+  });
+
+  return hours;
+} 
+// RETO 3
+// Tienes una caja de regalos de Navidad que Santa Claus quiere entregar 
+// a los niños. Cada regalo está representado por una cadena. Santa Claus tiene un trineo que puede llevar un peso limitado, 
+// y cada regalo dentro de la caja tiene un peso que es igual al número de letras en el nombre del regalo.
+
+// Santa Claus también tiene una lista de renos que pueden ayudarlo a 
+// entregar los regalos. Cada reno tiene un límite de peso máximo que puede llevar. 
+// El límite de peso máximo de cada reno es igual a dos veces el número de letras en su nombre.
+
+// Tu tarea es implementar una función distributeGifts(packOfGifts, reindeers) 
+// que recibe una caja de regalos y una lista de renos y devuelve el número máximo de cajas de estos regalos que Santa Claus
+//  puede entregar a los niños. Las cajas de regalos no se pueden dividir.
+
+// const packOfGifts = ["book", "doll", "ball"]
+// const reindeers = ["dasher", "dancer"]
+
+// // el pack de regalos pesa 4 + 4 + 4 = 12
+// // los renos pueden llevar (2 * 6) + (2 * 6) = 24
+// // por lo tanto, Santa Claus puede entregar 2 cajas de regalos
+
+// distributeGifts(packOfGifts, reindeers) // 2
+// Cosas a tener en cuenta:
+
+// Las cajas de regalos no se pueden dividir.
+// // Los nombres de los regalos y los renos siempre serán mayores que 0.
+
+
+// solucion
+
+
   </script>
  </body>
  </html>
