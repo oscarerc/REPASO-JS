@@ -36,3 +36,9 @@ $cards.appendChild($figure);
 const $figure2= document.createElement("figure");
 $figure.innerHTML=`
 <img src="https://placeimg.com/200/200/peopl3" alt="people"`;
+
+
+// TEMPLATES
+// MODELO A SEGUIR
+
+const $cardss = document.querySelector("cards");
