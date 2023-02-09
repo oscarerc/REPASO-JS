@@ -149,6 +149,10 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any"); */
         console.log(event)
       }
 
+      function saludar(nombre="Desconocido"){
+       alert("Hola"+nombre)
+      }
+
 
  //3️⃣ COMO MANEJADOR MÚLTIPLE
    
@@ -174,3 +178,27 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any"); */
    //👉 Habrá veces q a lo mejor a un mismo elemento Html le asignemos diferentes Manejadores de Eventos, es decir diferentes funciones q hagan diferentes cosas, bueno la limitante q tienen los eventos de tipo semántico, es q una vez q esta definido el evento semántico sólo va poder ejecutar una función.
    //👉 Toda función q se convierte en un Manejador de Eventos, es decir una función q se ejecuta en algún momento en un evento no puede recibir parámetros, el único parámetro q recibe es el evento en sí, que lo podemos obtener con la palabra 'event' o en algunos casos abreviar con la letra 'e'
    
+
+  //  PASAR PARAMETORS
+  // $eventoMultiple.addEventListener("click",saludar); //esto da error para pasar parametros debemos hacer uso de funciones desconocidas como veremos a continuacion
+    //aqui se ejecutara el parametro ya que es funcion segundaria la primera es la arrow
+  $eventoMultiple.addEventListener("click", ()=> saludar());
+
+
+  // ELEMINAR EVENTOS
+  // solo se puede hacer con eventos multiples
+  // se debe hacer en una funcion aparte ya que las arrow funtion no tienen memoria
+// funcion exdpresada
+
+$eventoRemover= document.getElementById("evento-remover");
+
+  const removerDobleClick = (e)=>{
+    $eventoRemover.addEventListener("dbclcick",()=>{
+      console.log(e);
+      $eventoRemover.removeEventListener("dbclick",removerDobleClick);
+  })
+  }
+
+  $eventoRemover.addEventListener("dbclcick",removerDobleClick);
+
+
