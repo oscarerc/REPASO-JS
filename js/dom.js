@@ -202,3 +202,7 @@ $eventoRemover= document.getElementById("evento-remover");
   $eventoRemover.addEventListener("dbclcick",removerDobleClick);
 
 
+//stopPorpagation & preventDefault
+
+// preventDefault cancela la accion por default ejemplo abrir un enlace
+//stopPorpagation no permita que siga el flujo de eventos
