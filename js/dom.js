@@ -206,3 +206,29 @@ $eventoRemover= document.getElementById("evento-remover");
 
 // preventDefault cancela la accion por default ejemplo abrir un enlace
 //stopPorpagation no permita que siga el flujo de eventos
+
+function flujoEventos(e){
+  console.log(
+    `hola te saluda ${this.classNmae}, el click lo origino ${e.target.classNmae}`
+  );
+}
+
+// DELEGACION DE VENTOS DESDE UN SOLO LISTENER EN ESTE CASO NO NECESITAMOS EL STOPPROPAGATION
+// METODO MATCHES BUSCA UN SELECTOR VALIDO
+// EN ESTE CASO SE USA EL DOCUMENTO GENERAL Y CON CONDICIONALES SE LE DA EL USO AL QUE NECESITAMSO
+
+document.addEventListener("click", (e)=>{
+  console.log("Click en ", e.target);
+
+  // SI QUEREMOS SABER DONDE SE DIO CLICK DENTRO DE UN CONTENEDOR CONDISTINTOS ELEMENTOS
+
+  if(e.target.matches("eventos-flujo div")){
+    flujoEventos(e);
+  }
+
+  if(e.target.matches(".eventos-flujo a")){
+    alert("Hola soy oscar");
+    e.preventDefault();
+  }
+});
+
