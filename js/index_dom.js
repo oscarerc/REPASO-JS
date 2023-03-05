@@ -6,6 +6,9 @@ import { digitalClock,alarm } from "./dom/reloj.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded",(e)=>{
+    // aqui llamamos las funciones y relacionamos las variables
     hamburgerMenu(".panel-btn",".panel", ".menu a");
+    digitalClock("#reloj","#activar-reloj","#desactivar-reloj");
+    alarm("assets/alarma.mp3","#activar-alarma","#desactivar-alarma")
 })
  

@@ -5,7 +5,7 @@ export function digitalClock(clock,btnPlay,btnStop){
 d.addEventListener("click",e=>{
     if(e.target.matches(btnPlay)){
        clockTempo= setInterval(()=>{
-            let clockHour= new Date().toLocaleString();
+            let clockHour= new Date().toLocaleTimeString();
             d.querySelector(clock).innerHTML=`<h3>${clockHour}</h3>`;
         },1000);
         e.target.disabled=true;
@@ -21,6 +21,23 @@ d.addEventListener("click",e=>{
 })
 }
 
-export function alarm(){
-    
+export function alarm(sound,btnPlay,btnStop){
+    let alarmaTempo;
+    const $alarm=d.createElement("audio");
+    $alarm.src= sound;
+
+    d.addEventListener("click", (e) =>{
+        if(e.target.matches(btnPlay)){
+            alarmaTempo=setTimeout(()=>{
+                $alarm.play();
+            },3000);
+            e.target.disabled=true;
+        }
+
+        if(e.target.matches(btnStop)){
+            clearTimeout(alarmaTempo);
+            $alarm.pause();
+            d.querySelector(btnPlay).disabled=false;
+        }
+    })
 }
