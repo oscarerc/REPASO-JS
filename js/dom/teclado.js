@@ -4,7 +4,7 @@ export function moveBall(e,ball,stage){
 const $ball = d.querySelector(ball),
 $stage = d.querySelector(stage),
 limitsBall= $ball.getBoundingClientRect(),
-limitsStage= $ball.getBoundingClientRect();
+limitsStage= $stage.getBoundingClientRect();
 console.log(e.keyCode);
 
 // creamos funcion anonima mover
