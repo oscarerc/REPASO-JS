@@ -128,7 +128,6 @@ transition: all 0.3s ease;
     display: flex;
     min-height: 50vh;
     background-color: black;
-    border: 1px solid black;
 }
 
 .ball{
