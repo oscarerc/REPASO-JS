@@ -1,4 +1,5 @@
 
+import scrollTopButton from "./dom/btn_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 // uando no hay default se realiza de la siguiente forma
@@ -13,6 +14,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     digitalClock("#reloj","#activar-reloj","#desactivar-reloj");
     alarm("assets/alarma.mp3","#activar-alarma","#desactivar-alarma");
     countdown("countdown","Nov 23,2023 03:23:19","FELIZ CUMPLEAÑOS");
+    scrollTopButton(".scroll-top-btn");
 });
 
 
