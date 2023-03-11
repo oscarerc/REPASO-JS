@@ -17,7 +17,13 @@ w.addEventListener("scroll", (e)=>{
 });
 
 d.addEventListener("click", (e)=>{
-    
-})
+    if(e.target.matches(btn)){
+        // propiedad de window para ir a algunn lugar con animacion
+        w.scrollTo({
+            behavior:"smooth",
+            top:0
+        });
+    }
+});
 
 }
