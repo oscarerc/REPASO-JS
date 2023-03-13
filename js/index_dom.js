@@ -16,7 +16,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     alarm("assets/alarma.mp3","#activar-alarma","#desactivar-alarma");
     countdown("countdown","Nov 23,2023 03:23:19","FELIZ CUMPLEAÑOS");
     scrollTopButton(".scroll-top-btn");
-    darkTheme(".dark-theme-btn", "dark-mode");
+    
 });
 
 
@@ -24,3 +24,7 @@ d.addEventListener("keydown",(e)=>{
     shortcuts(e);
     moveBall(e, ".ball" , ".stage")
 });
+
+// DEBEMOS SACAR KLA FUNCION DELD ARK DEBIDO A QUE ESTA DENTRO DE SU 
+// FLUJOO HACE USO DEL DOMCONTENLOADED Y NO PODEMOS LLAMARLA ANIDADAS
+darkTheme(".dark-theme-btn", "dark-mode");
