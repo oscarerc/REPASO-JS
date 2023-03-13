@@ -182,7 +182,7 @@ transition: all 0.3s ease;
     border-radius: 50%;
     font-size: 2rem;
     font-weight: bold;
-    background-color: var(--main-color);
+    background-color: #FDFD96;
     color: var(--second-color);
     cursor: pointer;
     outline: 0;
