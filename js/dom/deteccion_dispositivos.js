@@ -1,5 +1,5 @@
-const d = document;
-ñ = navigator;
+const d = document,
+n =navigator,
 // contiene la informacion del dispositivo que estamos visitando
 ua = n.userAgent;
 
@@ -9,7 +9,7 @@ const $id= d.getElementById(id),
     android: () => ua.match(/android/i),
     ios: () => ua.match(/ios/i),
     any: function () {
-      return this.andorid() || this.ios();
+      return this.android() || this.ios();
     },
   },
 
@@ -40,4 +40,12 @@ const $id= d.getElementById(id),
         );
       },
     };
+
+    $id.innerHTML=`
+    <ul>
+    <li> User Agent:<b> ${ua}</b></i>
+    <li>Plataforma:<b>${ismobile.any()?ismobile.any(): isDesktop.any()}</b></li>
+    <li>Navegador :<b>${isBrowser.any()}</b></li>
+    </ul>
+    `;
 }
