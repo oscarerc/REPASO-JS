@@ -1,4 +1,5 @@
 
+import networkStatus from "./deteccion_red.js";
 import scrollTopButton from "./dom/btn_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
@@ -35,3 +36,4 @@ d.addEventListener("keydown",(e)=>{
 // DEBEMOS SACAR KLA FUNCION DELD ARK DEBIDO A QUE ESTA DENTRO DE SU 
 // FLUJOO HACE USO DEL DOMCONTENLOADED Y NO PODEMOS LLAMARLA ANIDADAS
 darkTheme(".dark-theme-btn", "dark-mode");
+networkStatus();
