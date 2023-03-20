@@ -13,7 +13,7 @@ export default function webcam(id) {
         $video.play();
       })
       .catch((err) => {
-        $video.insertAdjacentElement("afterend",`<p><mark>${err}</mark></p>`)
+        $video.insertAdjacentElement("afterend",`<p><mark> Error${err}</mark></p>`)
         console.log(err);
       });
   }

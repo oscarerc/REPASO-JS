@@ -11,6 +11,7 @@ import responsiveTester from "./dom/prueba_responsive.js";
 import { digitalClock,alarm } from "./dom/reloj.js";
 import { shortcuts,moveBall } from "./dom/teclado.js";
 import darkTheme from "./dom/tema_oscuro.js";
+import getGeolocation from "./dom/geolocalizacion.js";
 
 const d = document;
 
@@ -26,6 +27,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     responsiveTester("responsive-tester");
     userDeviceInfo("user-device");
     webcam("webcam");
+    getGeolocation("geolocation");
     
 });
 
