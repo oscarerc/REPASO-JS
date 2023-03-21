@@ -3,17 +3,17 @@ const d = document,
 
 export default function getGeolocation(id) {
   const $id = d.getElementById(id),
-  options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
+    options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
 
   const success = (position) => {
-    let coords= position.coords;
+    let coords = position.coords;
     console.log(position);
 
-    $id.innerHTML=`
+    $id.innerHTML = `
     <p>Tu pocision actual es:</p>
     <ul>
     <li>Latitud:<b>${coords.latitude}</b></li>
@@ -28,6 +28,5 @@ export default function getGeolocation(id) {
     console.log(err);
   };
 
-
-  n.geolocation.getCurrentPosition(success,error,options);
+  n.geolocation.getCurrentPosition(success, error, options);
 }
