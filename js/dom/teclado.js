@@ -5,7 +5,7 @@ const $ball = d.querySelector(ball),
 $stage = d.querySelector(stage),
 limitsBall= $ball.getBoundingClientRect(),
 limitsStage= $stage.getBoundingClientRect();
-console.log(e.keyCode);
+// console.log(e.keyCode);
 
 // creamos funcion anonima mover
 // const move= (direction)=>{ }
@@ -39,6 +39,6 @@ $ball.style.transform =`translate(${x*10}px, ${y*10}px)`;
 
 export function shortcuts(e){
     // atajos
-    console.log(e.type)
-    console.log(e)
+    // console.log(e.type)
+    // console.log(e)
 }

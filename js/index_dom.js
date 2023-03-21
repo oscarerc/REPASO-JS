@@ -34,10 +34,10 @@ d.addEventListener("DOMContentLoaded",(e)=>{
 });
 
 
-d.addEventListener("keydown",(e)=>{
-    shortcuts(e);
-    moveBall(e, ".ball" , ".stage")
-});
+// d.addEventListener("keydown",(e)=>{
+//     shortcuts(e);
+//     moveBall(e, ".ball" , ".stage")
+// });
 
 // DEBEMOS SACAR KLA FUNCION DELD ARK DEBIDO A QUE ESTA DENTRO DE SU 
 // FLUJOO HACE USO DEL DOMCONTENLOADED Y NO PODEMOS LLAMARLA ANIDADAS
