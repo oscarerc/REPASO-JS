@@ -12,6 +12,7 @@ import { digitalClock,alarm } from "./dom/reloj.js";
 import { shortcuts,moveBall } from "./dom/teclado.js";
 import darkTheme from "./dom/tema_oscuro.js";
 import getGeolocation from "./dom/geolocalizacion.js";
+import searchFilters from "./dom/filtro_busquedas.js";
 
 const d = document;
 
@@ -28,6 +29,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     userDeviceInfo("user-device");
     webcam("webcam");
     getGeolocation("geolocation");
+    searchFilters(".card-filter",".card");
     
 });
 
