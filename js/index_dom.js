@@ -13,6 +13,7 @@ import { shortcuts,moveBall } from "./dom/teclado.js";
 import darkTheme from "./dom/tema_oscuro.js";
 import getGeolocation from "./dom/geolocalizacion.js";
 import searchFilters from "./dom/filtro_busquedas.js";
+import draw from "./dom/sorteo.js";
 
 const d = document;
 
@@ -30,7 +31,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     webcam("webcam");
     getGeolocation("geolocation");
     searchFilters(".card-filter",".card");
-    
+    draw("#winner-btn",".player")
 });
 
 
