@@ -43,6 +43,7 @@ header{
     padding: 1rem;
     background-color:var(--main-color);
     color: var(--second-color);
+    z-index: 997;
 }
 
 header h1{
@@ -246,4 +247,42 @@ transition: all 0.3s ease;
     visibility: hidden;
     opacity: 0;
     order: 1;
+}
+
+/* RESPONSIVE SLIDER */
+.slider{
+    position: relative;
+    border: thin solid black;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.slider-slides{
+    position: relative;
+    height: 400px;
+}
+
+.slider-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+.slider-slide img{
+    height: inherit;
+    width: inherit;
+    /* ajustar la imagen sin perder calidad */
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.slider-slide.active{
+    opacity: 1;
+    visibility: visible;
 }
