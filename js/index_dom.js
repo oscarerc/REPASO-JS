@@ -14,6 +14,7 @@ import darkTheme from "./dom/tema_oscuro.js";
 import getGeolocation from "./dom/geolocalizacion.js";
 import searchFilters from "./dom/filtro_busquedas.js";
 import draw from "./dom/sorteo.js";
+import slider from "./dom/carrusel.js";
 
 const d = document;
 
@@ -31,7 +32,8 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     webcam("webcam");
     getGeolocation("geolocation");
     searchFilters(".card-filter",".card");
-    draw("#winner-btn",".player")
+    draw("#winner-btn",".player");
+    slider();
 });
 
 
