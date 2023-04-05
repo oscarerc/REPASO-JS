@@ -12,7 +12,7 @@ export default function scrollSpy(){
             const id= entry.target.getAttribute("id");
             console.log(id);
 
-            if(entry.isintersecting){
+            if(entry.isIntersecting){
                 d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add("active");
             }else{
                 d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove("active");

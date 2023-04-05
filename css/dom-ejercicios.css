@@ -366,7 +366,7 @@ transition: all 0.3s ease;
 
     .scroll-top-btn{
         right: initial;
-        left: calc(4.25rem +1vw);
+        left: calc(4.25rem + 1vw);
     }
 
 }
