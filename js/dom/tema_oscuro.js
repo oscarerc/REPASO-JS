@@ -6,7 +6,7 @@ export default function darkTheme(btn, classDark){
     // en css el uso de [] hace referencia a la lista del mismo atributo
     $selectors=d.querySelectorAll("[data-dark]");
 
-    console.log($selectors); 
+    // console.log($selectors); 
 
     let moon="🌙",
     sun="☀️";

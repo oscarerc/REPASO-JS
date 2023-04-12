@@ -1,9 +1,9 @@
 const d= document;
 
 export default function scrollSpy(){
-    const sections = d.querySelectorAll("section[data-scroll-spy]");
+    const $sections = d.querySelectorAll("section[data-scroll-spy]");
     const cb =(entries)=>{
-        //console.log("entries", entries);
+        console.log("entries", entries);
 
         entries.forEach((entry)=>{
             // cada entry
@@ -26,7 +26,7 @@ export default function scrollSpy(){
         // threshold:0.5
     });
 
-    $sections.array.forEach(el => {
+    $sections.forEach(el => {
         observer.observe(el);
     });
 }

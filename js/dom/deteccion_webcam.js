@@ -8,13 +8,14 @@ export default function webcam(id) {
     n.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
-        console.log(stream);
+        // console.log(stream);
         $video.srcObject= stream;
         $video.play();
       })
       .catch((err) => {
-        $video.insertAdjacentElement("afterend",`<p><mark> Error${err}</mark></p>`)
-        console.log(err);
+        // $video.insertAdjacentElement("afterend",`<p><mark> Error${err}</mark></p>`)
+        // console.log(err);
+        err;
       });
   }
 }
