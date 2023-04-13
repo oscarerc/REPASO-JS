@@ -370,3 +370,84 @@ transition: all 0.3s ease;
     }
 
 }
+
+
+/* FORMULARIOS */
+.contac-form{
+    --fomr-ok-color:#4caf50;
+    --fomr-error-color:#f44336;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.contac-form>*{
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.contac-form textarea{
+    resize: none;
+}
+
+.contac-form legend,
+.contac-form-response{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contac-form input,
+.contac-form textarea{
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.contac-form input[type="submit"]{
+    width: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contac-form *::placeholder{
+    color:#000;
+}
+
+.contac-form [required]:valid{
+    border:thin solid var(--fomr-ok-color);
+}
+
+.contac-form [required]:invalid{
+    border:thin solid var(--fomr-error-color);
+}
+
+.contac-form-error{
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--fomr-error-color);
+    color: #fff;
+    transition: all 800ms ease;
+}
+
+.contac-form-error.is-active{
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none{
+    display: none;
+}
+
+@keyframes show-messages{
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
