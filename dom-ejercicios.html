@@ -36,7 +36,7 @@
         <a href="#seccion11" data-scroll-spy>SORTEOS</a>
         <a href="#seccion12" data-scroll-spy>Slider</a>
         <a href="#seccion13" data-scroll-spy>video inteligente</a>
-        <a href="#seccion14" data-scroll-spy></a>
+        <a href="#seccion14" data-scroll-spy>validaciones de fomulario</a>
         <a href="#seccion15" data-scroll-spy></a>
     </nav>
   </aside>
@@ -179,6 +179,35 @@
         <video src="assets/video.mp4" muted controls loop data-smart-video></video>   
         <br><br><br><br><br><br>
         <video src="assets/video.mp4" muted controls loop data-smart-video></video>   
+    </section>
+
+    <section id="seccion14" class="section"  data-scroll-spy>
+        <h2>Validaciones de formularo</h2>
+        <form action="" class="contac-form">
+            <legend>Envianos tus comentarios</legend>
+            <input type="text" name="name" placeholder="Escribe tu nombre" title="Nombre no contiene los 
+            caracteres permitidos solo letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$" required>
+
+            <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+
+            <input type="text" name="subject" placeholder="Asunto a tratar" title="Asunto requerido" required>
+
+            <textarea name="comments"  cols="30" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" 
+            title="Tu comentario excede la longitud max" required></textarea>
+            
+            <input type="submit" value="Enviar" >
+
+            <div class="contact-form-loader">
+                <img src="assets/puff.svg" alt="Cargando">
+            </div>
+
+            <div class="contact-form-response">
+                <p>LOS DATOS HAN SIDO ENVIADOS CORRECTAMENTE</p>
+            </div>
+            
+        </form>
+ 
     </section>
 
   </main>
