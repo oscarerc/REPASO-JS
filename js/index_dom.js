@@ -16,7 +16,7 @@ import searchFilters from "./dom/filtro_busquedas.js";
 import draw from "./dom/sorteo.js";
 import slider from "./dom/carrusel.js";
 import scrollSpy from "./dom/scroll_espia.js";
-import smathvideo from "./dom/video_inteligente.js";
+import smartvideo from "./dom/video_inteligente.js";
 
 const d = document;
 
@@ -37,7 +37,7 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     draw("#winner-btn",".player");
     slider();
     scrollSpy();
-    smathvideo();
+    smartvideo();
 });
 
 
