@@ -184,25 +184,27 @@
     <section id="seccion14" class="section"  data-scroll-spy>
         <h2>Validaciones de formularo</h2>
         <form action="" class="contac-form">
+            
             <legend>Envianos tus comentarios</legend>
-            <input type="text" name="name" placeholder="Escribe tu nombre" title="Nombre no contiene los 
-            caracteres permitidos solo letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$" required>
 
-            <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+            <input type="text" name="name"  placeholder="Escribe tu nombre" title="Nombre no contiene los 
+            caracteres permitidos solo letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+
+            <input type="email" name="email"  placeholder="Escribe tu email" title="Email incorrecto"
             pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
 
-            <input type="text" name="subject" placeholder="Asunto a tratar" title="Asunto requerido" required>
+            <input type="text" name="subject"  placeholder="Asunto a tratar" title="Asunto requerido" required>
 
-            <textarea name="comments"  cols="30" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" 
+            <textarea name="comments"   cols="30" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" 
             title="Tu comentario excede la longitud max" required></textarea>
             
             <input type="submit" value="Enviar" >
 
-            <div class="contact-form-loader none">
+            <div class="contac12-form-loader none">
                 <img src="assets/puff.svg" alt="Cargando">
             </div>
 
-            <div class="contact-form-response none">
+            <div class="contac-form-response none">
                 <p>LOS DATOS HAN SIDO ENVIADOS CORRECTAMENTE</p>
             </div>
             
