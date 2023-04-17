@@ -20,26 +20,38 @@ export default function formValidations() {
         pattern = $input.pattern || $input.dataset.pattern;
 
       if (pattern && $input.value !== "") {
-
         let regex = new RegExp(pattern);
-        console.log(!regex.exec($input.value),pattern);
+        console.log(!regex.exec($input.value), pattern);
         return !regex.exec($input.value)
-
           ? d.getElementById($input.name).classList.remove("none")
           : d.getElementById($input.name).classList.add("none");
       }
 
       if (!pattern) {
-
         return $input.value === ""
-        ? d.getElementById($input.name).classList.remove("none")
-        : d.getElementById($input.name).classList.add("none");
+          ? d.getElementById($input.name).classList.remove("none")
+          : d.getElementById($input.name).classList.add("none");
       }
     }
   });
 
-  d.addEventListener(("submit",(e)=>{
+  d.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("enviando formulario");
-  }))
+    // alert("enviando formulario");
+
+    // variables que alamcenen referencias del loader y response
+    const $loader = d.querySelector(".contac-form-loader"),
+      $response = d.querySelector(".contac-form-response");
+
+    $loader.classList.remove("none");
+
+    setTimeout(() => {
+      $loader.classList.add("none");
+      $response.classList.remove("none");
+
+      setTimeout(() => {
+        $response.classList.add("none");
+      }, 3000);
+    }, 3000);
+  });
 }
