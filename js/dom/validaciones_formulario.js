@@ -36,7 +36,7 @@ export default function formValidations() {
   });
 
   d.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // alert("enviando formulario");
 
     // variables que alamcenen referencias del loader y response

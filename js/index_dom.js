@@ -18,6 +18,7 @@ import slider from "./dom/carrusel.js";
 import scrollSpy from "./dom/scroll_espia.js";
 import smartvideo from "./dom/video_inteligente.js";
 import formValidations from "./dom/validaciones_formulario.js";
+import speechReader from "./dom/narrador.js";
 
 const d = document;
 
@@ -52,3 +53,4 @@ d.addEventListener("DOMContentLoaded",(e)=>{
 // FLUJOO HACE USO DEL DOMCONTENLOADED Y NO PODEMOS LLAMARLA ANIDADAS
 darkTheme(".dark-theme-btn", "dark-mode");
 networkStatus();
+speechReader();
