@@ -21,7 +21,7 @@ export default function formValidations() {
 
       if (pattern && $input.value !== "") {
         let regex = new RegExp(pattern);
-        console.log(!regex.exec($input.value), pattern);
+        // console.log(!regex.exec($input.value), pattern);
         return !regex.exec($input.value)
           ? d.getElementById($input.name).classList.remove("none")
           : d.getElementById($input.name).classList.add("none");
